@@ -1,11 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template, session, redirect, url_for
 app = Flask(__name__)
 
 
 @app.route("/")
 def hello():
-    return "Hello World from Flask in a uWSGI Nginx Docker container with \
-     Python 3.6 (from the example template) 123"
+    return render_template('base.html', title='Home')
 
 
 if __name__ == "__main__":
